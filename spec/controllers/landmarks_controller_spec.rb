@@ -61,8 +61,8 @@ describe LandmarksController do
   it "allows you to edit a single landmark" do
     @landmark = Landmark.first
     visit "/landmarks/#{@landmark.id}/edit"
-    fill_in :name, with: "BQE!!!!"
-    fill_in :year_completed, with: 9999
+    fill_in :landmark_name, with: "BQE!!!!"
+    fill_in :landmark_year_completed, with: 9999
     click_button "Edit Landmark"
     @landmark = Landmark.first
     expect(page.current_path).to eq("/landmarks/#{@landmark.id}")
